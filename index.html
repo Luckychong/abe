@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>for abe</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="script.js" defer></script>
+  <style>
+ 
+ *{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+#home{
+	width: 100%;
+	height:100vh;
+	background-image: url(IMG_5481.jpg);
+	background-repeat: no-repeat;
+	background-size:cover;
+	background-position:center;
+	background-color: rgba(255, 255, 255, 0.16);
+	background-blend-mode: overlay;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-attachment: fixed;
+
+
+	animation-name: bg-change;
+	animation-duration: 10s;
+	animation-timing-function: linear;
+	animation-direction: alternate;
+	animation-iteration-count: infinite;
+	overflow: hidden;
+
+}
+
+
+@keyframes bg-change{
+	from{
+		background-image: url(IMG_5481.jpg);
+	}
+
+	to{
+		background-image: url(IMG_7643.jpg);
+	}
+}
+
+.home_section{
+	width: 80%;
+	min-height: 400px;
+	display: flex;
+	justify-content:center;
+	align-items: center;
+	padding: 10px;
+}
+
+
+.home_content{
+	width: 45%;
+	text-align: center;
+}
+
+
+.home_img{
+	width: 50%;
+	height:450px;
+	perspective: 1000px;
+	overflow: hidden;
+	animation: movePosition linear 10s alternate infinite;
+	transform: translateX(-100%);
+}
+
+
+
+@keyframes movePosition{
+	from{
+		transform: translateX(-100%);
+	}
+
+	to{
+		transform: translateX(80%);
+	}
+}
+
+
+.home_img .card{
+	width: 75%;
+	height: 100%;
+	position: absolute;
+	left: 20%;
+	top: 30px;
+	transition: all 1s;
+	transform-style: preserve-3d;
+
+	animation-name:heart-move;
+	animation-timing-function: linear;
+	animation-duration: 10s;
+	animation-direction: alternate;
+	animation-iteration-count: infinite;
+}
+
+.front,.back{
+	width:100%;
+	height:100%;
+	position:absolute;
+	backface-visibility:hidden;	
+}
+
+
+
+.home_img img{
+	width: 100%;
+	-webkit-filter:drop-shadow(5px 5px 10px rgba(0,0,0,0.45));
+}
+
+.back{
+	transform: rotateY(-95deg);
+}
+
+
+
+@keyframes heart-move{
+	from{
+		transform: rotateY(0deg);
+	}
+	to{
+		transform: rotateY(90.25deg);
+	}
+}
+  p {font-size: 16px;}
+  .margin {margin-bottom: 45px;}
+  .bg-1 { 
+    background: url("pexels-felixmittermeier-956999.jpg") no-repeat center center;
+    background-size: cover;   
+    background-color: #7785ed; /* Green */
+    color: #fafafa;
+  }
+  .bg-2 { 
+    background-color: #474e5d; /* Dark Blue */
+    color: #ffffff;
+  }
+  .bg-3 { 
+    background-color: #ffffff; /* White */
+    color: #555555;
+  }
+  .bg-4 { 
+    background-color: #2f2f2f; /* Black Gray */
+    color: #fff;
+  }
+  .container-fluid {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+ 
+.navbar {
+  display: flex;
+  justify-content: space-between; /* Space between logo and menu */
+  align-items: center; /* Center items vertically */
+  padding: 10px 20px; /* Padding for spacing */
+  
+}
+
+
+.navbar-menu {
+  list-style: none; /* Remove default list styling */
+  display: flex; /* Flexbox for horizontal layout */
+}
+
+.navbar-menu li {
+  margin: 0 150px; /* Spacing between menu items */
+}
+
+.navbar-menu a {
+  color: rgb(8, 7, 7); /* Link color */
+  text-decoration: none; /* Remove underline */
+  font-size: 18px; /* Font size for menu items */
+}
+
+/* Ensure body content is not hidden behind navbar */
+body::before {
+  content: '';
+  display: block;
+  height: 60px; /* Height of the fixed navbar */
+}
+
+.navbar-menu a:hover {
+  color: #fff; /* Change to white on hover */
+  background-color: pink; /* Darker background on hover */
+  border-radius: 5px; /* Rounded corners for the hover effect */
+  padding: 5px 10px; /* Padding to make hover effect more visible */
+}
+.loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
+}
+
+.loading-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #FF5C35;
+}
+
+.dots::after {
+    content: '';
+    display: inline-block;
+    width: 1em;
+    text-align: left;
+    animation: dots 1.5s steps(4, end) infinite;
+}
+
+@keyframes dots {
+    0%, 20% {
+        content: '';
+    }
+    40% {
+        content: '.';
+    }
+    60% {
+        content: '..';
+    }
+    80%, 100% {
+        content: '...';
+    }
+}
+
+
+  </style>
+</head>
+<body>
+<head>
+    
+    <nav class="navbar">
+        <div class="navbar-container">
+            <ul class="navbar-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="celebration.html">Gallery</a></li>
+                <li><a href="letter.html">Letter</a></li>
+                <li><a href="contact.html">Us</a></li>
+            </ul>
+        </div>
+    </nav>
+</head>
+
+<!-- Section Start -->
+<section id="home" class="home">
+    <div class="home_section">
+        <div class="home_img">
+            <div class="card">
+             <div class="front">
+            <img src="IMG_5481.jpg"/>
+           </div>
+              <div class="back">
+            <img src="IMG_5481.jpg" />
+              </div>
+            </div>
+        </div>
+
+
+    </div>
+</section>
+<!-- Section End -->
+
+<!-- First Container -->
+<div class="container-fluid bg-1 text-center">
+  <h3 class="margin">180 days with you!</h3>
+  <img src="IMG_5222.jpg" style="width: 300px; height: 300px;" alt="abe">
+  <h3>I love you</h3>
+</div>
+
+<!-- Second Container -->
+<div class="container-fluid bg-2 text-center">
+  <h3 class="margin">You’re the laughter in my heart and the calm in my storm;
+    you’re the one who makes my world feel warm.</h3>
+
+ 
+ 
+</div>
+<div class="loader-container">
+    <div class="loading-text">Loading<span class="dots"></span></div>
+</div>
+<!-- Third Container (Grid) -->
+<div class="container-fluid bg-3 text-center">    
+  <h3 class="margin">Counting the days</h3><br>
+  <div class="row">
+    <div class="col-sm-4">
+      <img src="https://images.template.net/74370/Free-Pink-Transparent-Heart-Clipart-1.jpg" style = "display: block; margin-left: auto;"  class="img-responsive margin" style="width:70%" alt="Image">
+    </div>
+    <div class="col-sm-4"> 
+      <img src="IMG_7745.jpg" class="img-responsive margin" style="width:100%" alt="Image">
+    </div>
+    <div class="col-sm-4"> 
+      <img src="https://images.template.net/74370/Free-Pink-Transparent-Heart-Clipart-1.jpg" style = "display: block; margin-left: auto;" class= img-responsive margin" style="width:70%" alt="Image">
+    </div>
+  </div>
+</div>
+
+
+</body>
+</html>
