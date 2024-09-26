@@ -1,0 +1,179 @@
+* {
+  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+
+body {
+  background-color: #35353d; /* Grey background */
+  
+}
+/* Navbar styling */
+header {
+  position: fixed; /* Fixed positioning to stay at the top */
+  width: 100%; /* Full width */
+  top: 0; /* Align to the top */
+  left: 0; /* Align to the left */
+  background-color: #333; /* Dark background color */
+  color: white; /* Text color */
+  z-index: 1000; /* Ensure it stays above other content */
+  
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between; /* Space between logo and menu */
+  align-items: center; /* Center items vertically */
+  padding: 10px 20px; /* Padding for spacing */
+  
+}
+
+
+.navbar-menu {
+  list-style: none; /* Remove default list styling */
+  display: flex; /* Flexbox for horizontal layout */
+}
+
+.navbar-menu li {
+  margin: 0 150px; /* Spacing between menu items */
+}
+
+.navbar-menu a {
+  color: white; /* Link color */
+  text-decoration: none; /* Remove underline */
+  font-size: 18px; /* Font size for menu items */
+}
+
+/* Ensure body content is not hidden behind navbar */
+body::before {
+  content: '';
+  display: block;
+  height: 60px; /* Height of the fixed navbar */
+}
+
+.navbar-menu a:hover {
+  color: #fff; /* Change to white on hover */
+  background-color: pink; /* Darker background on hover */
+  border-radius: 5px; /* Rounded corners for the hover effect */
+  padding: 5px 10px; /* Padding to make hover effect more visible */
+}
+
+
+
+.slideshow-container {
+  position: relative;
+  max-width: 60%; /* Adjust the maximum width of the slideshow */
+  margin: auto;
+  overflow: hidden;
+  border: 1px solid #ddd; /* Optional: Add a border around the slideshow */
+  border-radius: 8px; /* Optional: Add rounded corners */
+  
+  
+}
+
+.slide {
+  display: none;
+}
+
+img {
+  width: 100%; /* Ensure images scale with the container */
+  height: auto;
+  border-radius: 8px; /* Optional: Round image corners */
+}
+
+.fade {
+  animation: fade 1.5s ease-in-out;
+}
+
+@keyframes fade {
+  from { opacity: 0.4; }
+  to { opacity: 1; }
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 8px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: background-color 0.6s ease;
+  border-radius: 50%;
+  user-select: none;
+  background-color: rgba(0, 0, 0, 0.5); /* Add background color */
+}
+
+.next {
+  right: 10px;
+}
+
+.prev {
+  left: 10px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+@media only screen and (max-width: 600px) {
+  .slideshow-container {
+      max-width: 100%;
+  }
+
+  .prev, .next {
+      font-size: 12px;
+      padding: 5px;
+  }
+
+  .pause-play {
+      padding: 5px;
+      font-size: 12px;
+  }
+}
+
+.slide {
+  position: relative;
+  display: inline-block;
+}
+
+.typewriter-container {
+  position: absolute; /* Absolute positioning to control the position precisely */
+    top: 0; /* Align to the top of the viewport */
+    left: 50%; /* Center horizontally in the viewport */
+    transform: translateX(-50%); /* Adjust for horizontal centering */
+    display: flex;
+    justify-content: center; /* Center content horizontally within the container */
+    width: 100%; /* Full width, adjust as needed */
+    /* Optional: Add padding or margin if needed */
+}
+
+/* Basic styling for the container */
+.typewriter {
+  font-size: 17px;
+  font-family: "Lucida Handwriting", cursive;
+  font-weight: bold;
+  color: white;
+  overflow: hidden; /* Ensures that the text doesn’t overflow */
+  border-right: 3px solid #333; /* Cursor effect */
+  white-space: nowrap; /* Prevent text wrapping */
+  animation: typing 4s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+/* Animation keyframes for typing effect */
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+/* Animation keyframes for cursor blink effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: #333; }
+}
+
